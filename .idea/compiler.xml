@@ -7,10 +7,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mq-producer" />
+        <module name="spring-activemq" />
+        <module name="spring-boot-consumer" />
+        <module name="spring-boot-listener" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mq-producer" target="1.5" />
+      <module name="spring-activemq" target="1.7" />
+      <module name="spring-boot-consumer" target="1.7" />
+      <module name="spring-boot-listener" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

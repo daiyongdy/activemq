@@ -8,6 +8,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/mq-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-activemq/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-listener/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-consumer/pom.xml" />
       </list>
     </option>
   </component>

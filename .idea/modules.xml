@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/mq-producer/mq-producer.iml" filepath="$PROJECT_DIR$/mq-producer/mq-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-activemq/spring-activemq.iml" filepath="$PROJECT_DIR$/spring-activemq/spring-activemq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-consumer/spring-boot-consumer.iml" filepath="$PROJECT_DIR$/spring-boot-consumer/spring-boot-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-listener/spring-boot-listener.iml" filepath="$PROJECT_DIR$/spring-boot-listener/spring-boot-listener.iml" />
     </modules>
   </component>
 </project>

@@ -16,19 +16,22 @@ public class QueueReceiver {
 		Connection connection = connectionFactory.createConnection();
 		connection.start();
 
-		Session session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);
+		Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
 
-		Destination destination = session.createQueue("my-queue");
+		Destination destination = session.createQueue("spring-queue");
 
 		MessageConsumer messageConsumer = session.createConsumer(destination);
 
 		int i = 0 ;
 
-		while (i < 3) {
+		while (i < 1) {
 			i ++;
 			TextMessage textMessage = (TextMessage) messageConsumer.receive();
-			session.commit();
+//			session.commit();
 			System.out.println(textMessage.getText());
+			System.out.println("getJMSRedelivered " + textMessage.getJMSRedelivered());
+
+			textMessage.acknowledge();
 		}
 
 		session.close();

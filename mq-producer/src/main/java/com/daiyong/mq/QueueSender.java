@@ -18,15 +18,24 @@ public class QueueSender {
 
 		Session session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);
 
-		Destination destination = session.createQueue("my-queue");
+		Destination destination = session.createQueue("spring-queue");
 
 		MessageProducer messageProducer = session.createProducer(destination);
+		messageProducer.setDisableMessageTimestamp(true);
 
-		for (int i = 0; i < 3; i++) {
-			TextMessage textMessage = session.createTextMessage("message--" + i);
+		for (int i = 0; i < 1; i++) {
+			TextMessage textMessage = session.createTextMessage("message--333--" + i);
 			Thread.sleep(1000);
 			messageProducer.send(textMessage);
 		}
+
+		/*TextMessage textMessage = session.createTextMessage("message--");
+		textMessage.setJMSMessageID("222222222222222222222222");
+		textMessage.setJMSType("test");
+		textMessage.setJMSTimestamp(1111L);
+		textMessage.setStringProperty("p1", "p1");
+
+		messageProducer.send(textMessage);*/
 
 		session.commit();
 		session.close();
